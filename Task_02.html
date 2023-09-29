@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Get Link Attributes</title>
+</head>
+<body>
+<a id="myLink" href="https://www.example.com" hreflang="en" rel="nofollow" target="_blank" type="text/html">Example Link</a>
+<button onclick="getLinkAttributes()">Get Link Attributes</button>
+
+<script>
+function getLinkAttributes() {
+  // Get the link element by its ID
+  var link = document.getElementById("myLink");
+
+  // Check if the link element exists
+  if (link) {
+    // Get the attributes and their values
+    var hrefValue = link.getAttribute("href");
+    var hreflangValue = link.getAttribute("hreflang");
+    var relValue = link.getAttribute("rel");
+    var targetValue = link.getAttribute("target");
+    var typeValue = link.getAttribute("type");
+
+    // Display the values (you can also use console.log to log them)
+    alert("href: " + hrefValue + "\n" +
+          "hreflang: " + hreflangValue + "\n" +
+          "rel: " + relValue + "\n" +
+          "target: " + targetValue + "\n" +
+          "type: " + typeValue);
+  } else {
+    alert("Link not found.");
+  }
+}
+</script>
+</body>
+</html>

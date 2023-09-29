@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div class="header">
+</div>
+<script>
+// Select the section with id "container" using querySelector
+var containerSection = document.querySelector("#container");
+console.log(containerSection);
+
+// Select all list items with the class "second" using querySelectorAll
+var secondListItems = document.querySelectorAll(".second");
+console.log(secondListItems);
+
+// Function to show a message in the console when a button is clicked
+function showMessage() {
+  console.log("Button clicked!");
+}
+
+// Give the section with id "container" the text "Hello!"
+containerSection.textContent = "Hello!";
+
+// Add the class "main" to the div with a class of "footer"
+var footerDiv = document.querySelector(".footer");
+footerDiv.classList.add("main");
+
+// Function to remove the class "main" from the div with a class of "footer"
+function removeMainClass() {
+  footerDiv.classList.remove("main");
+}
+
+// Function to create a new <li> element
+function createNewListItem() {
+  var newListItem = document.createElement("li");
+  newListItem.textContent = "four"; // Give the li the text "four"
+  containerSection.querySelector("ul").appendChild(newListItem); // Append it to the <ul>
+}
+
+// Function to give background color "green" to all lis inside the ol tag
+function setGreenBackground() {
+  var olListItems = containerSection.querySelectorAll("ol li");
+  olListItems.forEach(function(item) {
+    item.style.backgroundColor = "green";
+  });
+}
+
+// Function to remove the div with a class of "footer"
+function removeFooterDiv() {
+  containerSection.removeChild(footerDiv);
+}
+</script>
+<section id="container">
+<ul>
+<li class="first">one</li>
+<li class="second">two</li>
+<li class="third">three</li>
+</ul>
+<ol>
+<li class="first">one</li>
+<li class="second">two</li>
+<li class="third">three</li>
+</ol>
+</section>
+<div class="footer">
+</div>
+
+<!-- Add a button to trigger the showMessage function -->
+<button onclick="showMessage()">Click me</button>
+
+<!-- Add a button to remove the "main" class from the footer -->
+<button onclick="removeMainClass()">Remove Main Class</button>
+
+<!-- Add a button to create a new <li> element -->
+<button onclick="createNewListItem()">Create New <li></button>
+
+<!-- Add a button to set green background for ol lis -->
+<button onclick="setGreenBackground()">Set Green Background</button>
+
+<!-- Add a button to remove the div with a class of footer -->
+<button onclick="removeFooterDiv()">Remove Footer Div</button>
+
+</body>
+</html>
